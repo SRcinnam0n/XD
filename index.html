@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>XD</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Courier New', Courier, monospace;
+      background: linear-gradient(to right, #ff00cc, #333399);
+      color: #fff;
+      text-align: center;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 3em;
+      text-shadow: 2px 2px #000;
+    }
+
+    input {
+      padding: 10px;
+      font-size: 1.2em;
+      border: none;
+      margin-top: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1.1em;
+      margin-top: 10px;
+      background-color: #00ffff;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #ff77ff;
+    }
+
+    #felicidades {
+      display: none;
+      font-size: 2em;
+      color: #00ffcc;
+    }
+  </style>
+</head>
+<body>
+  <div id="inicio">
+    <h1> adivina el codigo del portal  misterioso 👻 </h1>
+    <p>Escribe un número del 1 al 1000:</p>
+    <input type="number" id="numero" min="1" max="100">
+    <button onclick="verificarNumero()">Entrar</button>
+  </div>
+
+  <div id="felicidades">
+    <h1>🎉 Felicidades 🎉</h1>
+    <p>Acabas de perder tu tiempo</p>
+  </div>
+
+  <script>
+    function verificarNumero() {
+      const numero = parseInt(document.getElementById('numero').value);
+      if (numero === 419) {
+        document.getElementById('inicio').style.display = 'none';
+        document.getElementById('felicidades').style.display = 'block';
+      } else {
+        alert("No es el número correcto. Intenta otra vez.");
+      }
+    }
+  </script>
+</body>
+</html>
